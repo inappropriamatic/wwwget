@@ -1,0 +1,20 @@
+chdir ./wwwget_1
+screen -t "wwwget_1" 1 wget -e robots=off --no-parent --span-hosts --no-directories --recursive --level=5 --accept *.jpg*,*.JPG*,*.jpeg*,*.png*,*.PNG* --limit-rate=10k -i tgplist.txt
+
+chdir ..
+chdir ./wwwget_2
+screen -t "wwwget_2" 2 wget -e robots=off --no-parent --span-hosts --no-directories --recursive --level=5 --accept *.jpg*,*.JPG*,*.jpeg*,*.png*,*.PNG* --limit-rate=10k -i tgplist.txt
+
+chdir ..
+chdir ./wwwget_3
+screen -t "wwwget_3" 3 wget -e robots=off --no-parent --span-hosts --no-directories --recursive --level=5 --accept *.jpg*,*.JPG*,*.jpeg*,*.png*,*.PNG* --limit-rate=10k -i tgplist.txt
+
+chdir ..
+chdir ./wwwget_4
+screen -t "wwwget_4" 4 wget -e robots=off --no-parent --span-hosts --no-directories --recursive --level=5 --accept *.jpg*,*.JPG*,*.jpeg*,*.png*,*.PNG* --limit-rate=10k -i tgplist.txt
+
+chdir ..
+chdir ./wwwget_5
+screen -t "wwwget_5" 5 wget -e robots=off --no-parent --span-hosts --no-directories --recursive --level=5 --accept *.jpg*,*.JPG*,*.jpeg*,*.png*,*.PNG* --limit-rate=10k -i tgplist.txt
+
+chdir ..

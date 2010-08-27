@@ -1,0 +1,1 @@
+wget -e robots=off --no-parent --span-hosts --no-directories --recursive --level=5 --accept *.jpg*,*.JPG*,*.jpeg*,*.png*,*.PNG* --limit-rate=10k -i tgplist.txt

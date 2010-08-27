@@ -1,0 +1,30 @@
+Inappropriamatic - wwwget
+-------------------------
+
+This is the wwwget thumbnail gallery post (TGP) scraper.  To run it you need:
+
+- Some sort of linux, with screen, perl, and wget installed
+- A lot of free disk space.
+- A list of TGPs that you want to crawl (one per line), although a default one is provided.
+
+This program will take a list of TGP links, go into the galleries of each of them, and pull down all the images it finds.  One TGP link can have a lot of galleries, and a lot of galleries yields A LOT of images.  You may want to use one of my gallery viewers to browse it; I found that things like Picasa and F-Spot can buckle under the load.
+
+To start it, run the "runall" script.  It will prompt you for the number of individual wget sessions you want to run (in parallel) on your list of tgps.  This process is hard-drive bound, so I wouldn't recommend going over 5.  You probably have a better computer though, so you may get away with more.
+
+When the program gets started, you'll be presented with a screen session.  To view how the other wgets in that session are running, hit Ctrl+a n.  This will cycle you through.  To kill a session, hit Ctrl+c.
+
+The specific wget command you want to run is in tgpwget.txt.  This file must be one line.  The default:
+
+- ignores robots.txt
+- will not traverse up to a parent link
+- will go to another host if it encounters an external link
+- will dump all images into the same folder (for that wget session)
+- will recurse 3 levels from the starting link (tgp -> gallery-> image)
+- will get jpgs and pngs
+- will limit each session to 10k/s.  Five of these equals 50 k/s, which should be enough to let you work while this runs in the background.
+
+Each wget session is "nice"'d so that you can use your main computer for other things while this runs.  If you have a dedicated machine, or just a really good one, you can un-nice each screen session (in split.pl) and remove the rate limit (in tgpwget.txt)
+
+
+
+inappropriamatic@gmail.com

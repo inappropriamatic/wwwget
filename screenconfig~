@@ -1,0 +1,3 @@
+screen -t "python" 1 python
+screen -t "re.pl" 2 re.pl
+screen -t "temperature"  3 bash -c 'cd . ; temperature'
